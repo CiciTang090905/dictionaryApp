@@ -2,30 +2,55 @@ import "./style.css";
 
 const dictionaryAPI:string = "https://api.dictionaryapi.dev/api/v2/entries/en_US/";
 
-type definition = {
+// type definition = {
+//   definition: string;
+//   example?: string;
+//   synonyms?: string[];
+//   antonyms?: string[];
+// };
+
+// type Meaning = {
+//   partOfSpeech: string;
+//   definitions: definition[];
+// };
+
+// type Phonetic = {
+//   text?: string;
+//   audio?: string;
+// };
+
+// type DictionaryAPIResponse = {
+//   word: string;
+//   phonetic?: string;
+//   phonetics: Phonetic[];
+//   origin?: string;
+//   meanings: Meaning[];
+// };
+
+interface Definition {
   definition: string;
   example?: string;
   synonyms?: string[];
   antonyms?: string[];
-};
+}
 
-type Meaning = {
+interface Meaning {
   partOfSpeech: string;
-  definitions: definition[];
-};
+  definitions: Definition[];
+}
 
-type Phonetic = {
+interface Phonetic {
   text?: string;
   audio?: string;
-};
+}
 
-type DictionaryAPIResponse = {
+interface DictionaryAPIResponse {
   word: string;
   phonetic?: string;
   phonetics: Phonetic[];
   origin?: string;
   meanings: Meaning[];
-};
+}
 
 const searchWord = async (word) => {
   const response = await fetch(`${dictionaryAPI}${word}`);
