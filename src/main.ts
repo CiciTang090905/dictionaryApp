@@ -243,8 +243,8 @@ const displayError = (message: string): void => {
 
 
 
-const inputWord = document.getElementById("input");
-const submitBtn = document.getElementById("submit");
+const inputWord = document.getElementById("input") as HTMLInputElement; //use this to allow access to .value
+const submitBtn = document.getElementById("submit") as HTMLButtonElement;
 
 submitBtn.addEventListener("click", async () => {
   const word = inputWord.value.trim();
