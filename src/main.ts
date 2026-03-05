@@ -171,6 +171,7 @@ const displayError = (message) => {
 
 const inputWord = document.getElementById("input");
 const submitBtn = document.getElementById("submit");
+
 submitBtn.addEventListener("click", async () => {
   const word = inputWord.value.trim();
   if (!word) return;
